@@ -1,0 +1,9 @@
+# Ignore PDF source files
+*.pdf
+
+# Ignore Python virtual environment
+.venv/
+
+# Ignore system files
+.DS_Store
+Thumbs.db

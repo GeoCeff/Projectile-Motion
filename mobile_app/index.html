@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projectile Motion Mobile App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Projectile Motion</h1>
+    <p>Compare motion with and without air resistance for falling objects and launched projectiles.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1D Fall: Vertical Motion</h2>
+      <div class="form-grid">
+        <label>Mass (kg)<input id="mass" type="number" value="0.145" step="0.001" min="0.001" /></label>
+        <label>Radius (m)<input id="radius" type="number" value="0.0366" step="0.001" min="0.001" /></label>
+        <label>Drag coeff. C<input id="dragCoeff" type="number" value="0.5" step="0.1" min="0" /></label>
+        <label>Air density (kg/m³)<input id="rho" type="number" value="1.2" step="0.1" min="0" /></label>
+        <label>Time max (s)<input id="tMax" type="number" value="5" step="0.5" min="0.5" /></label>
+        <label>Time step (s)<input id="dt" type="number" value="0.01" step="0.005" min="0.001" /></label>
+      </div>
+      <button id="runFall">Run Vertical Motion</button>
+      <div class="chart-grid">
+        <div><canvas id="chartY"></canvas></div>
+        <div><canvas id="chartV"></canvas></div>
+        <div><canvas id="chartA"></canvas></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2D Projectile Motion</h2>
+      <div class="form-grid">
+        <label>Initial speed (m/s)<input id="v0" type="number" value="20" step="1" min="0" /></label>
+        <label>Launch angle (°)<input id="angle" type="number" value="45" step="1" min="0" max="90" /></label>
+        <label>Mass (kg)<input id="mass2" type="number" value="0.145" step="0.001" min="0.001" /></label>
+        <label>Drag coeff. C<input id="dragCoeff2" type="number" value="0.5" step="0.1" min="0" /></label>
+        <label>Air density (kg/m³)<input id="rho2" type="number" value="1.2" step="0.1" min="0" /></label>
+        <label>Time step (s)<input id="dt2" type="number" value="0.01" step="0.005" min="0.001" /></label>
+      </div>
+      <button id="runProjectile">Run Projectile Motion</button>
+      <div class="chart-grid projectile-chart">
+        <div><canvas id="chartXY"></canvas></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built from Activity 4.3 projectile motion code.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
